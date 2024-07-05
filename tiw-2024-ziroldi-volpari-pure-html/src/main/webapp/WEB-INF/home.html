@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css" th:href="@{/css/style.css}"/>
+	<title>Home</title>
+</head>
+<body>	
+	<h1>Home page</h1>
+	
+	
+	<a class="logout-button" th:href="@{/Logout}">Logout</a>
+		
+		
+	<div class="album-list-container">
+		<div class="album-list">
+			<h2>Your albums</h2>
+			<div class="album-table">
+				<table>
+					<thead>
+					    <tr>
+					      <th>Album</th>
+					      <th>Creation date</th>
+					    </tr>
+				  	</thead>
+						
+					<tbody>
+						<tr th:each="a : ${userAlbums}">
+							<td>
+								<a th:href="@{/GoToAlbumPage(albumId=${a.id})}" th:text="${a.title}">Title</a>
+							</td>
+							<td th:text="${a.creationDate}">Creation date</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="error-message" th:if="${userAlbums.size() == 0}">You haven't created any album yet.</div>		
+			</div>
+		</div>
+		
+		<div class="album-list">
+			<h2>Albums of others</h2>
+			
+			<div class="album-table">
+				<table>
+					<thead>
+					    <tr>
+					      <th>Album</th>
+					      <th>Creation date</th>
+					    </tr>
+				  	</thead>
+					<tbody>
+						<tr th:each="a : ${otherAlbums}">
+							<td>
+								<a th:href="@{/GoToAlbumPage(albumId=${a.id})}" th:text="${a.title}">Title</a>
+							</td>
+							<td th:text="${a.creationDate}">Creation date</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="error-message" th:if="${otherAlbums.size() == 0}">Other users haven't created any album yet.</div>
+			</div>
+		</div>
+	</div>
+		
+	<div class="album-forms-container">
+		<div class="album-form">
+			<h3>Create album</h3>
+			<form action="CreateAlbum" method="POST">
+			Title: <input type="text" name="title" placeholder = "Enter album title" required> <br>
+			<input type="submit" value="Create album" class="button">
+		</form>
+		</div>
+		
+		<div class="album-form">
+			<h3>Add image to an album</h3>
+			<form action="AddNewImageToAlbum" method="POST" enctype="multipart/form-data">
+				Title: <input type="text" placeholder = "Enter image title" name="title" required> <br>
+				Description: <input type="text" placeholder = "Enter image description" name="description" required> <br>
+				<select class="custom-select" name="albumId" required>
+					<option value="">Select an album</option>
+					<th:block th:each="album : ${userAlbums}">
+			           	<option th:value="${album.id}" th:text="${album.title}"></option>
+			       	</th:block>
+				</select> <br>
+				<label for="file-upload" class="custom-file-upload">
+					Choose file
+				</label>
+				<input id="file-upload" type="file" name="image" required> <br> 
+				<input type="submit" value="Add image" class="button">
+			</form>
+			<div th:text="${errorMessage}"></div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

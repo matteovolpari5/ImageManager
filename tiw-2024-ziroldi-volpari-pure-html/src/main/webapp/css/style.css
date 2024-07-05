@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+    font-family: Poppins, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.access-forms {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.credentials-form {
+	border: 2px solid #7db4aa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 35%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+.credentials-form h3 {
+	text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.credentials-form input[type="text"],
+.credentials-form input[type="email"],
+.credentials-form input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #7db4aa;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 5px;
+	border: 1px solid #333;
+    cursor: pointer;
+}
+
+.credentials-form .button:hover {
+    background-color: #538279;
+}
+
+.error-message {
+	text-align: center;
+    color: #bd1313;
+	margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.credentials-form a {
+    display: block;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.album-list-container {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    border: 2px solid #7db4aa;
+    border-radius: 10px; 
+}
+
+.album-list {
+   	width: 45%;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+.album-list h2 {
+	margin-block-start: 10px;
+	margin-block-end: 10px;
+}
+
+.album-forms-container {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    align-items: center; 
+	margin-bottom: 30px;
+}
+
+.album-form {
+	width: 400px;
+	vertical-align: top;	
+	border: 2px solid #7db4aa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+
+.album-form h3 {
+	margin-top: 0;
+}
+
+.album-form input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.album-table {
+	margin-bottom: 20px;
+}
+
+.album-table table {
+  	width: 100%;
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  	table-layout:fixed;
+}
+
+.album-table th {
+ 	background-color: #f5f5f5;;
+ 	border: 1px solid #ddd;
+  	padding: 8px;
+  	text-align: left;
+}
+
+.album-table td {
+  	border: 1px solid #ddd;
+  	padding: 8px;
+  	word-wrap: break-word;
+}
+
+.album-table tr:nth-child(even) {
+  	background-color: #f5f5f5;
+}
+
+.album-table td:hover {
+	background-color: #f5f5f5;
+}
+
+.custom-select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    
+}
+
+.custom-select:hover,
+.custom-select:focus {
+    border-color: #007bff;
+}
+
+.album-form input[type="file"] {
+	display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+.navigation-button {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #7db4aa;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.navigation-button:hover {
+    background-color: #538279;
+}
+
+.logout-button {
+	display: block;
+    width: 100px; 
+    text-align:center;
+    padding: 10px 20px;
+    background-color: #dbdbdb; 
+    color: #333;
+    text-decoration: none; 
+    border-radius: 10px;
+    margin-left: auto; 
+	margin-right: 40px;
+}
+
+.page-navigation-button {
+    display: block;
+    width: 100px; 
+    text-align:center;
+    padding: 10px 20px;
+    background-color: #dbdbdb; 
+    color: #333;
+    text-decoration: none; 
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.page-navigation-button:hover {
+    background-color: #ccc;
+}
+
+.images-table td {
+	word-wrap: break-word;
+}
+
+.delete-image-button{
+	display: block;
+    width: 250px; 
+    margin: 0 auto;
+    margin-top: 10px;
+	margin-bottom: 10px;
+    text-align:center;
+    padding: 10px 20px;
+    background-color: #7db4aa; 
+    color: #333;
+    text-decoration: none; 
+    border-radius: 10px;
+}
+
+.delete-image-button:hover {
+    background-color: #538279;
+}
+
+.add-image-to-album-form{
+	border: 2px solid #7db4aa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.image-container {
+  	width: 90%;
+  	margin: 0 auto;
+  	display: flex;
+  	padding:10px;
+  	border: 2px solid #7db4aa;
+  	border-radius: 10px; 
+  	margin-top: 30px;
+  	margin-bottom: 30px;
+}
+
+.album-images-container {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.images-table {
+	border-collapse: collapse;
+	empty-cells: show;
+	width: 50%;
+	margin: auto;
+	table-layout:fixed;
+}
+
+.button-container {
+	min-width: 10%;
+	width: 10%;
+	display:block;
+}
+
+.fixed-width-button {
+	display: block;
+    padding: 10px 10px;
+    background-color: #7db4aa;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.image-container img {
+  	max-width: 700px;
+  	max-height: 700px;
+  	margin-right: 20px;
+  	margin-left: 10px;
+  	object-fit: contain;
+}
+
+.info-container {
+  	flex: 1;
+  	padding: 30px;
+  	margin-right: 15px;
+  	margin-bottom: 20px;
+}
+
+h2{
+	text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.page-button-container {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	display:flex;
+	justify-content: center;
+	gap: 50px;
+}
+
+.image-cell {
+	border: 1px solid #dddddd;
+	text-align: center;
+	vertical-align:center;
+	padding-top: 10px;
+	width: 200px;
+	height: 200px;
+}
+
+.image-cell img{
+	max-height: 200px;
+	max-width: 200px;
+}
+
+.comment-container { 
+	width:95%;
+	margin: 0 auto;
+	display:flex;
+	justify-content: space-evenly;
+	margin-top: 30px;
+	padding:10px; 
+}
+
+.comment-list {
+	width: 45%;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+.comment-table {
+	width: 90%;
+	margin: 0 auto;
+  	border-collapse: collapse;
+  	border-spacing: 0;
+}
+
+.comment-table h2 {
+	margin-top: 0;
+}
+
+.comment-table table {
+	width: 100%;
+	table-layout:fixed;
+}
+
+.comment-table th {
+ 	background-color: #f5f5f5;;
+  	padding: 8px;
+  	text-align: center;
+}
+
+.comment-table td {
+  	padding: 8px;
+  	text-align: center;
+  	word-wrap: break-word;
+}
+
+.comment-form-container {
+	width:45%;
+	box-sizing: border-box;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.comment-form {
+	width: 90%;
+	margin: 0 auto;
+	vertical-align: top;	
+	border: 2px solid #7db4aa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.comment-form input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.comment-form h2 {
+	margin-top: 0;
+}
+
+.image-info {
+	border: 2px solid #7db4aa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+	margin-bottom: 30px;
+}

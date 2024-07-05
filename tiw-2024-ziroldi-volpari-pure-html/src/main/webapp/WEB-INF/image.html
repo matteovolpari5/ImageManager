@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css" th:href="@{/css/style.css}"/>
+	<title>Image page</title>
+</head>
+<body>
+	<h1>Image page</h1>
+	
+	<a class="logout-button" th:href="@{/Logout}">Logout</a>
+	
+	<div class="image-container">
+		<img th:src="@{/DisplayImage(imageId=${image.id})}">
+		
+		<div class="info-container">
+			<div class="image-info">
+				<h2>Details</h2> 
+				<p th:text="'Title: ' + ${image.title}">Title</p>
+				<p th:text="'Description: ' + ${image.description}">Description</p>
+				<p th:text="'Date: ' + ${image.creationDate}">Creation date</p>
+			</div>
+			
+			<div th:if="${#bools.isTrue(userProperty)}">
+				<a class="delete-image-button" th:href="@{/DeleteImageFromAlbum(albumId=${albumId}, imageId=${image.id})}">Delete from album</a>
+				
+				<div class="add-image-to-album-form">
+					<h2>Add to other album</h2>
+					<form action="AddExistingImageToAlbum" method="POST">
+						<input type="hidden" name="oldAlbumId" th:value="${albumId}"><br>
+						<input type="hidden" name="imageId" th:value="${image.id}"><br>			
+						<select class="custom-select" name="newAlbumId" required>
+							<option value="">Select an album</option>					
+							<th:block th:each="album : ${otherUserAlbums}">
+								<option th:value="${album.id}" th:text="${album.title}"></option>
+						    </th:block>
+						</select> <br>	
+						<input type="submit" value="Add image" class="button">
+					</form>
+				</div> 
+			</div>
+		</div> 
+	</div>
+	
+	<div class="comment-container">
+		<div class="comment-list">
+			<div class="comment-table">
+			<h2>Comments</h2>
+				<div th:if="${not #lists.isEmpty(comments)}">
+					<table>
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="i : ${#numbers.sequence(0, (#lists.size(comments)-1))}">
+								<td th:text="${commentUser[__${i}__]}">User</td>
+								<td th:text="${comments[__${i}__].content}">Content</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="comment-form-container">
+			<div class="comment-form">
+				<h2>Add a comment</h2>
+				<form action="AddCommentToImage" method="POST">
+					<input type="hidden" name="albumId" th:value="${albumId}">
+					<input type="hidden" name="imageId" th:value="${image.id}">
+					Comment: <input type="text" placeholder="Enter comment" name="content" required> <br>
+					<input type="submit" value="Send comment" class="button">
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<footer>
+		<div class="page-button-container">
+			<a class="page-navigation-button" th:href="@{/GoToAlbumPage(albumId=${albumId})}">Album page</a>
+			<a class="page-navigation-button" th:href="@{/GoToHomePage}">Home page</a>
+		</div>
+    </footer>
+	
+</body>
+</html>

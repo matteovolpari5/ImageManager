@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css" th:href="@{/css/style.css}"/>
+	<title>Album page</title>
+</head>
+<body>
+	<h1>Album page</h1>
+	
+	<a class="logout-button" th:href="@{/Logout}">Logout</a>
+	
+	<div class="album-images-container">
+		
+		<div class="button-container">
+			<div th:if="${#bools.isTrue(hasPrevious)}">
+				<a class="fixed-width-button" th:href="@{/ShowPreviousImages(albumId=${albumId}, pageNumber=${pageNumber})}">Previous</a>
+			</div>
+		</div>
+		 
+		
+		<div th:if="${not #lists.isEmpty(currImages)}">
+			<table class="images-table">
+				<tbody>
+					<tr>
+						<th:block th:each="i : ${#numbers.sequence(0,4)}">
+							<td class="image-cell">
+								<div th:if="${i < #lists.size(currImages)}">
+									<div th:text="${currImages[__${i}__].title}">Title</div><br>
+									<a th:href="@{/GoToImagePage(albumId=${albumId}, imageId=${currImages[__${i}__].id})}">
+										<img th:src="@{/DisplayImage(imageId=${currImages[__${i}__].id})}">
+									</a>
+								</div>
+								<div th:if="${i >= #lists.size(currImages)}"></div>
+							</td>
+						</th:block>	
+					</tr>
+				</tbody>
+			</table> 
+		</div>
+		
+		<div class="error-message" th:if="${currImages.size() == 0}">The album has no images.</div>
+		
+		 <div class="button-container">
+			<div th:if="${#bools.isTrue(hasNext)}">
+				<a class="fixed-width-button" th:href="@{/ShowNextImages(albumId=${albumId}, pageNumber=${pageNumber})}">Next</a>
+			</div>
+		</div>
+		
+	</div>
+	
+	<footer>  
+		<a class="page-navigation-button" th:href="@{/GoToHomePage}">Home page</a>
+    </footer>
+	
+</body>
+</html>

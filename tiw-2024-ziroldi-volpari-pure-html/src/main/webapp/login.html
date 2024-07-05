@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login page</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+	<h1>Welcome to MyImageManager</h1>
+	
+	<div class="access-forms">
+	
+		<div class="credentials-form">
+			<h3>Login</h3>
+			<form action="CheckLogin" method="POST">
+				Email or username: <input type="text" placeholder = "Enter email or username" name="username" required> <br>
+				Password: <input type="password" placeholder = "Enter password" name="password" required> <br>
+				<input type="submit" value="Login" class="button">
+			</form>
+			<p class="error-message" th:text=" ${errorMsgLogin}"></p>
+		</div>
+		
+		<div class="credentials-form">
+			<h3>Signup</h3>
+			<form action="CheckSignup" method="POST">
+				Email: <input type="email" placeholder = "Enter email" name="email" required> <br>
+				Username: <input type="text" placeholder = "Enter username" name="username" required> <br>
+				Password: <input type="password" placeholder = "Enter password" name="password" required> <br>
+				Repeat password: <input type="password" placeholder = "Enter password" name="repeatPassword" required> <br>
+				<input type="submit" value="Signup" class="button">
+				<p class="error-message" th:text=" ${errorMsgSignup}"></p>
+			</form>
+		</div>
+		
+	</div>
+</body>
+</html>

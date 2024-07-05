@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net" modified="2024-05-16T21:16:25.965Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="_e-3YEITrsSjmz8n-71y" version="24.4.3" type="device">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="1290" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-16" value="CreateAlbum" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="86" y="30" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-17" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="ierfgvXDSs9Ay4-zxwUW-16" vertex="1">
+          <mxGeometry x="45" y="75" width="10" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-19" value="AlbumDAO" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="470" y="30" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-20" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="ierfgvXDSs9Ay4-zxwUW-19" vertex="1">
+          <mxGeometry x="45" y="80" width="10" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-21" value="new AlbumDAO()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="141" y="133.99999999999994" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="226" y="134" />
+            </Array>
+            <mxPoint x="515" y="134" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-23" value="GoToHomePage" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="740" y="30" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-24" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="ierfgvXDSs9Ay4-zxwUW-23" vertex="1">
+          <mxGeometry x="45" y="230" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-25" value="redirect" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" parent="1" source="ierfgvXDSs9Ay4-zxwUW-17" target="ierfgvXDSs9Ay4-zxwUW-24" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="146" y="280" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="231" y="280" />
+            </Array>
+            <mxPoint x="656" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-31" value="POST&lt;div&gt;/CreateAlbum&lt;/div&gt;&lt;div&gt;albumTitle&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;From:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Home.html&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="146" width="90" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-32" value="createAlbum(albumTitle, session.user.id)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="141" y="239.99999999999994" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="226" y="240" />
+            </Array>
+            <mxPoint x="515" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ierfgvXDSs9Ay4-zxwUW-18" value="doPost" style="html=1;verticalAlign=bottom;startArrow=oval;endArrow=block;startSize=8;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="64" y="120" as="sourcePoint" />
+            <mxPoint x="129" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-1" value="CreateAlbum" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="5" y="2" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-2" value="ErrorHandler" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="620" y="30" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="yinMM0lGdRGWJy8JTKXc-2">
+          <mxGeometry x="45" y="60" width="10" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="yinMM0lGdRGWJy8JTKXc-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="109" as="sourcePoint" />
+            <mxPoint x="560" y="109" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-5" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;[albumTitle==null || albumTitle.isEmpty()] displayError(request, response, &quot;Missing or empty title&quot;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="150" y="84" width="450" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-6" value="findAlbumsByUserSorted(user.getId())" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="142" y="156.99999999999994" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="227" y="157" />
+            </Array>
+            <mxPoint x="516" y="157" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-7" value="userAlbums" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" source="ierfgvXDSs9Ay4-zxwUW-20">
+          <mxGeometry x="0.4591" relative="1" as="geometry">
+            <mxPoint x="140" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="270" y="180" />
+            </Array>
+            <mxPoint x="324" y="180" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-8" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="139" y="219" as="sourcePoint" />
+            <mxPoint x="664" y="219" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yinMM0lGdRGWJy8JTKXc-9" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;for Album a: userAlbums [a.getTitle.equals(albumTitle]&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;displayError(request, response, &quot;can&#39;t create two albums with the same title&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="160" y="181" width="360" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

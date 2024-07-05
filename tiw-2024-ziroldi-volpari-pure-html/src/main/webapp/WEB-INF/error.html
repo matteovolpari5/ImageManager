@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css" th:href="@{/css/style.css}"/>
+	<title>Error page</title>
+</head>
+<body>
+	<h1>Error</h1>
+	<p class="error-message" th:text="${errorMsg}">The page was not found.</p>
+	
+	<footer>  
+		<a class="page-navigation-button" href="GoToHomePage">Home page</a>
+    </footer>
+</body>
+</html>
