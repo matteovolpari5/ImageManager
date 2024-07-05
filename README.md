@@ -17,8 +17,8 @@ The full requirements can be found [here](https://github.com/kevinziroldi/image-
 <img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-pure-html/photos/home_pure_html.png">
 
 ### Album page
-<img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-pure-html/photos/album_pure_html.png">
+<img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-js/photos/album_js.png">
 
 ### Image page
-<img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-pure-html/photos/image_pure_html.png">
+<img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-js/photos/image_js.png">
 
