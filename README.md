@@ -1,5 +1,3 @@
-# image-manager-webapp
-
 # Web technologies project - Politecnico di Milano
 
 ## Description
