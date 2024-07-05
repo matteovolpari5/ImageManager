@@ -1,0 +1,6 @@
+title Logout
+[->Home:click on logout button
+Home->Logout: AJAX GET:\n   /Logout
+Logout->Session: invalidate()
+Logout->Home: sendRedirect("login.html)
+Home->Window:location = "login.html"

@@ -1,0 +1,25 @@
+title ChangeImagesOrder
+
+[->Home:click on save order button
+Home->ChangeImagesOrder:AJAX POST:\n      jsonString
+ChangeImagesOrder->AlbumDAO:new AlbumDAO()
+ChangeImagesOrder->AlbumDAO:findAlbumById(albumId)
+AlbumDAO-->ChangeImagesOrder:album
+
+opt [album==null]
+ChangeImagesOrder->Home:status code != 200
+Home->Home:Error msg
+end
+ChangeImagesOrder->ImageDAO:new ImageDAO()
+ChangeImagesOrder->ImageDAO:findImageById(imageId)
+ImageDAO-->ChangeImagesOrder:image
+ChangeImagesOrder->ImageDAO:albumContainsImage(albumId, imageId)
+ImageDAO-->ChangeImagesOrder: contained
+opt [image==null || contained==false
+ChangeImagesOrder->Home:status code != 200
+Home->Home: error msg
+end
+ChangeImagesOrder->ContainsDAO: new ContainsDAO()
+ChangeImagesOrder->ContainsDAO:changeImagesOrder(userId, albumId, imageIds)
+ChangeImagesOrder->Home:status code == 200
+Home->PageOrchestrator:showAlbumImages(albumId)

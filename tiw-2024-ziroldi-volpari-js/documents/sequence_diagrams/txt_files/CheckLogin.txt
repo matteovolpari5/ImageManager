@@ -1,0 +1,14 @@
+title CheckLogin
+[->login.html/login.js: submit form login
+login.html/login.js -> CheckLogin:AJAXPOST: \nusername, password
+CheckLogin->UserDao: new UserDao()
+CheckLogin->UserDao:checkCredentials(username, password)
+UserDao-->CheckLogin: user
+alt user == null
+CheckLogin->login.html/login.js: status code != 200
+login.html/login.js->login.html/login.js: Error msg
+else 
+CheckLogin->Session: setAttribute ("user", user)
+CheckLogin->login.html/login.js: status code == 200
+login.html/login.js-> Window: location = "home.html"
+end

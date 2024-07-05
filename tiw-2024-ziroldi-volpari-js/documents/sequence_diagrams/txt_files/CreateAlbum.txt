@@ -1,0 +1,16 @@
+title CreateAlbum
+
+[->Home: submit createAlbum form
+Home->CreateAlbum:AJAX POST:\n        title
+CreateAlbum->AlbumDAO:new AlbumDAO()
+CreateAlbum->AlbumDAO:findAlbumsByUserSorted(user.getId())
+AlbumDAO-->CreateAlbum:albums
+opt [for(Album a: albums) { if(a.getTitle().equals(title))}]
+CreateAlbum->Home:status code != 200
+Home->Home:Error msg
+
+end
+
+CreateAlbum->AlbumDAO:createAlbum(title, user.getId())
+CreateAlbum->Home : status code == 200
+Home->PageOrchestrator:showAlbumList()

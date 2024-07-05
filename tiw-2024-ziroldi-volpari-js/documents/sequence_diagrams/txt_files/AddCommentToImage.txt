@@ -1,0 +1,29 @@
+title AddCommentToImage
+
+[->Home:submit comment form
+Home-> AddCommentToImage: AJAX POST \nalbumId, imageId, content
+opt content==null || content.isEmpty
+AddCommentToImage->Home:status code != 200
+Home->Home:Error msg
+end
+AddCommentToImage->AlbumDAO:new AlbumDAO()
+AddCommentToImage->AlbumDAO:findAlbumById(albumId)
+AlbumDAO-->AddCommentToImage:album
+
+opt album==null
+AddCommentToImage->Home:status code != 200
+Home->Home:Error msg
+end
+AddCommentToImage->ImageDAO:new ImageDAO()
+AddCommentToImage->ImageDAO:findImageById(imageId)
+ImageDAO-->AddCommentToImage:image
+AddCommentToImage->ImageDAO:albumContainsImage(albumId, imageId)
+ImageDAO-->AddCommentToImage: contained
+opt image==null || contained==false
+AddCommentToImage->Home:status code != 200
+Home->Home: error msg
+end
+AddCommentToImage->CommentDAO:new CommentDAO()
+AddCommentToImage->CommentDAO:addComment(content, userId, imageId)
+AddCommentToImage->Home:status code == 200
+Home->PageOrchestrator:showImageModalWindow(imageId, albumId)

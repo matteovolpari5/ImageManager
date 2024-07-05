@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>MyImageManager</display-name>
+  <context-param>
+    <param-name>dbUrl</param-name>
+    <param-value>jdbc:mysql://localhost:3306/db_image_manager_js?serverTimezone=UTC</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbUser</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbPassword</param-name>
+    <param-value>password</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbDriver</param-name>
+    <param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>imagesPath</param-name>
+    <param-value>/Users/kevin/Desktop/tiw-project-js/</param-value>
+  </context-param>
+  
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+  
+  <filter> 
+      <filter-name>NoCacher</filter-name>
+      <filter-class>it.polimi.tiw.image_manager.filters.NoCacher</filter-class> 
+ </filter>
+  <filter>
+  	<filter-name>CheckUserLogged</filter-name>
+  	<filter-class>it.polimi.tiw.image_manager.filters.CheckUserLogged</filter-class>
+  </filter>
+  
+  <filter-mapping> 
+    <filter-name>NoCacher</filter-name> 
+    <url-pattern>/home.html</url-pattern> 
+ </filter-mapping> 
+  <filter-mapping>
+  	<filter-name>CheckUserLogged</filter-name>
+  	<url-pattern>/AddCommentToImage</url-pattern>
+  	<url-pattern>/AddExistingImageToAlbum</url-pattern>
+  	<url-pattern>/AddNewImageToAlbum</url-pattern>
+	<url-pattern>/ChangeImagesOrder</url-pattern>
+  	<url-pattern>/CreateAlbum</url-pattern>
+  	<url-pattern>/DeleteImageFromAlbum</url-pattern>
+  	<url-pattern>/GetAlbumImagesData</url-pattern>
+  	<url-pattern>/GetAlbumsData</url-pattern>
+  	<url-pattern>/GetImageData</url-pattern>
+  </filter-mapping>
+</web-app>

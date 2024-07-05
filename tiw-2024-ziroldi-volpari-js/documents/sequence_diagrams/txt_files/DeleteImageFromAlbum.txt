@@ -1,0 +1,24 @@
+title DeleteImageFromAlbum
+[->Home: click on delete button
+Home->DeleteImageFromAlbum:AJAX GET:\n albumId, imageId
+DeleteImageFromAlbum->AlbumDAO:new AlbumDAO()
+DeleteImageFromAlbum->AlbumDAO:findAlbumById(albumId)
+AlbumDAO-->DeleteImageFromAlbum:album
+DeleteImageFromAlbum->AlbumDAO: getUserByAlbumId(albumId)
+AlbumDAO-->DeleteImageFromAlbum:userId
+opt [album==null || userId!=user.getId()]
+DeleteImageFromAlbum->Home:status code != 200
+Home->Home:Error msg
+end
+DeleteImageFromAlbum->ImageDAO:new ImageDAO()
+DeleteImageFromAlbum->ImageDAO:findImageById(imageId)
+ImageDAO-->DeleteImageFromAlbum:image
+DeleteImageFromAlbum->ImageDAO:albumContainsImage(albumId, imageId)
+ImageDAO-->DeleteImageFromAlbum: contained
+opt [image==null || contained==false
+DeleteImageFromAlbum->Home:status code != 200
+Home->Home: error msg
+end
+DeleteImageFromAlbum->ImageDAO:deleteImageFromAlbum(albumId, imageId)
+DeleteImageFromAlbum->Home:status code == 200
+Home->Home: AlbumImages.show()

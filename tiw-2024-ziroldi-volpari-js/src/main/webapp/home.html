@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Home page</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/utils.js" charset="utf-8" defer></script>
+		<script src="js/home.js" charset="utf-8" defer></script>
+	</head>
+	
+	<body>
+		<h1>ImageManager</h1>
+
+		<!-- logout button -->	
+		<a class="logout-button" href="Logout">Logout</a>
+
+		<!-- alert modal window -->		
+		<div id="alert_modal_window"  class="modal-window">
+			<div id="alert_modal_content" class="modal-content-alert">
+				<p id="alert_message" class="alert-message"></p>
+			</div>
+		</div>
+		
+		<!-- home page -->
+		<div id="albums_container">
+
+			<div id="album_list_container" class="album-list-container">
+
+				<div class="album-list">
+					<h2>Your albums</h2>
+					<div class="album-table">
+						<table id="user_albums_table">
+							<thead>
+								<tr>
+								  <th>Album</th>
+								  <th>Creation date</th>
+								</tr>
+							  </thead>
+								
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="album-list">
+					<h2>Albums of others</h2>
+					<div class="album-table">
+						<table id="other_albums_table">
+							<thead>
+								<tr>
+								  <th>Album</th>
+								  <th>Creation date</th>
+								</tr>
+							  </thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="album-forms-container">
+
+				<div class="album-form">
+					<h3>Create album</h3>
+					<form action="#" accept-charset="UTF-8">
+						Title: <input type="text" name="title" placeholder = "Enter album title" required> <br>
+						<input id="create_album_button" type="button" value="Create album" class="button">
+					</form>
+				</div>
+				
+				<div class="album-form">
+					<h3>Add image to an album</h3> 
+					<form action="#" accept-charset="UTF-8" enctype="multipart/form-data">
+						Title: <input type="text" placeholder = "Enter image title" name="title" required><br>
+						Description: <input type="text" placeholder = "Enter image description" name="description" required><br>
+						<select id="select_album" class="custom-select" name="albumId" required></select><br>
+						<div class="img-upload">
+							<label for="file_upload" class="custom-file-upload">
+								Choose file
+							</label>
+							<input id="file_upload" type="file" name="image" required> 
+							<img id="confirm_image" class="confirm-image" src="images/confirm_image.png"><br>
+						</div> 
+						<input id="add_image_button" type="button" value="Add image" class="button">
+					</form>
+				</div>
+
+			</div>
+			
+		</div>
+
+		<!-- album page -->
+		<div id="album_page_container">
+			
+			<a id="sort_images_button" class="sort-images-button" href="#">Sort images</a>
+			
+			<div class="album-images-container">
+						
+				<div class="button-container">
+					<a id="previous_button" class="fixed-width-button" href="#">Previous</a>
+				</div>
+				
+				<table id="images_table" class="images-table">
+					<tbody>
+					</tbody>
+				</table> 
+
+				<div class="button-container">
+					<a id="next_button" class="fixed-width-button" href="#">Next</a>
+				</div>
+				
+			</div>
+			
+			<footer> 
+				<a id="album_to_home_button" class="page-navigation-button" href="#">Home page</a>
+			</footer>
+			
+		</div> 
+		
+		<div class="sort-container" id="sort_images_container">
+			<h2>Sort images</h2>
+
+			<table class="images-titles-table" id="images_titles_table">
+				<tbody>
+				</tbody>
+			</table>
+
+			<a id="save_custom_order_button" class="sort-images-button" href="#">Save order</a>
+
+			<a id="sort_to_album_page" class="page-navigation-button" href="#">Album page</a>
+		</div>
+
+		<!-- image modal window -->
+		<div id="image_modal_window" class="modal-window">
+			<div id="image_modal_content" class="modal-content-image">
+				<div id="image_container" class="image-container">
+					<img id="image">
+					<div id="info_container" class="info-container">
+						<div class="image-info">
+							<h2>Details</h2>
+							<p id="title"></p>
+							<p id="description"></p>
+							<p id="creation_date"></p>
+						</div>
+						<div class="delete-image-div">
+							<a class="delete-image-button" id="delete_image_button">Delete from Album</a>
+						</div>
+						<div id="add_to_other_album_form" class="add-image-to-album-form">
+							<h2>Add to other album</h2> 
+							<form action="#">
+								<select id="select_other_user_album" class="custom-select" name="newAlbumId" required>
+								</select> <br>
+								<input type="hidden" name="oldAlbumId" id="hidden_album_id_other_album"><br>
+								<input type="hidden" name="imageId" id="hidden_image_id_other_album"><br>
+								<input id="add_image_to_other_album_button" type="button" value="Add image" class="button">
+							</form>
+						</div>
+					</div>
+					
+				</div>
+				<div class="comment-container">
+					<div class="comment-list">
+						<div class="comment-table" id="comments_table">
+							<h2>Comments</h2>
+							<table>
+								<thead>
+									<tr>
+										<th>User</th>
+										<th>Comment</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="comment-form-container">
+						<div class="comment-form">
+							<h2>Add a comment</h2>
+							<form action="#" accept-charset="UTF-8">
+								<input type="hidden" name="albumId" id="hidden_album_id_comment">
+								<input type="hidden" name="imageId" id="hidden_image_id_comment">
+								Comment: <input type="text" placeholder="Enter comment" name="content" required> <br>
+								<input id="add_comment_button" type="button" value="Send comment" class="button">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+
+
+
+
+

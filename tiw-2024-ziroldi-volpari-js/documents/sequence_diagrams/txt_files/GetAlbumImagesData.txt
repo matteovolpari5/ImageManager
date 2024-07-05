@@ -1,0 +1,16 @@
+title GetAlbumImagesData
+
+[->Home:AbumImages.show()
+Home-> GetAlbumImagesData: AJAX GET \nalbumId
+GetAlbumImagesData->AlbumDAO:new AlbumDAO()
+GetAlbumImagesData->AlbumDAO:findAlbumById(albumId)
+AlbumDAO-->GetAlbumImagesData:album
+opt album==null
+GetAlbumImagesData->Home:status code != 200
+Home->Home:Error msg
+end
+GetAlbumImagesData->ImageDAO:new ImageDAO()
+GetAlbumImagesData->ImageDAO:findImagesForAlbumActualSort(albumId, user.getId())
+ImageDAO-->GetAlbumImagesData:images
+GetAlbumImagesData->Home:status code == 200
+GetAlbumImagesData->Home:imagesJson

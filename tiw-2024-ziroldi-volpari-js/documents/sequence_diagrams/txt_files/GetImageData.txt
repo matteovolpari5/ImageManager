@@ -1,0 +1,36 @@
+title         GetImageData
+
+[->Home:AlbumList.show()
+Home->GetImageData : AJAX GET \nimageId, albumId
+GetImageData->AlbumDAO:new AlbumDAO()
+GetImageData->AlbumDAO:findAlbumById(albumId)
+AlbumDAO-->GetImageData:album
+GetImageData->AlbumDAO: getUserByAlbumId(albumId)
+AlbumDAO-->GetImageData:userId
+GetImageData->AlbumDAO:findAlbumsByUserSorted(userId)
+AlbumDAO-->GetImageData:userAlbums
+opt album==null
+GetImageData->Home:status code != 200
+Home->Home:Error msg
+end
+GetImageData->ImageDAO:new ImageDAO()
+GetImageData->ImageDAO:findImageById(imageId)
+ImageDAO-->GetImageData:image
+GetImageData->ImageDAO:albumContainsImage(albumId, imageId)
+ImageDAO-->GetImageData: contained
+opt [image==null || contained==false
+GetImageData->Home:status code != 200
+Home->Home: error msg
+end
+
+GetImageData->CommentDAO:new CommentDAO()
+GetImageData->CommentDAO:findCommentByImageId(imageId)
+CommentDAO-->GetImageData:comments
+loop comment c in comments
+GetImageData->CommentDAO:getUsernameByCommentId(c.getId())
+CommentDAO-->GetImageData:commentUser
+end
+
+
+GetImageData->Home:status code == 200
+GetImageData->Home:imageJson

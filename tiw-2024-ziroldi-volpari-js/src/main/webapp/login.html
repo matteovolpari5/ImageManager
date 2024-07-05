@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login page</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/utils.js" charset="utf-8" defer></script>
+	<script src="js/login.js" charset="utf-8" defer></script>
+</head>
+<body>
+	<h1>Welcome to ImageManager</h1>
+	
+	<div class="access-forms">
+	
+		<div class="credentials-form">
+			<h3>Login</h3>
+			<form action="#">
+				<fieldset>
+					Email or username: <input type="text" placeholder="Enter email or username" name="username" required> <br>
+					Password: <input type="password" placeholder="Enter password" name="password" required> <br>
+					<input id="login_button" type="button" value="Login" class="button">
+					<p id="login_error_message" class="error-message"></p>
+				</fieldset>
+			</form>
+		</div>
+		
+		<div class="credentials-form">
+			<h3>Signup</h3>
+			<form action="#" method="POST">
+				<fieldset>
+					Email: <input type="email" placeholder = "Enter email" name="email" required> <br>
+					Username: <input type="text" placeholder = "Enter username" name="username" required> <br>
+					Password: <input type="password" placeholder = "Enter password" name="password" required> <br>
+					Repeat password: <input type="password" placeholder = "Enter password" name="repeatPassword" required> <br>
+					<input id="signup_button" type="button" value="Signup" class="button">
+					<p id="signup_error_message" class="error-message"></p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

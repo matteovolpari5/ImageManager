@@ -1,0 +1,29 @@
+title AddExistingImageToAlbum
+
+[->Home:submit add existing image form
+Home->AddExistingImageToAlbum:AJAX POST \noldAlbumid, imageId, newAlbumId
+AddExistingImageToAlbum->AlbumDAO:new AlbumDAO()
+AddExistingImageToAlbum->AlbumDAO:findAlbumById(oldAlbumId)
+AlbumDAO-->AddExistingImageToAlbum:oldAlbum
+AddExistingImageToAlbum->AlbumDAO:findAlbumById(newAlbumId)
+AlbumDAO-->AddExistingImageToAlbum:newAlbum
+AddExistingImageToAlbum->AlbumDAO: getUserByAlbumId(oldAlbumId)
+AlbumDAO-->AddExistingImageToAlbum:userId
+opt oldAlbum==null || newAlbum==null || userId!=user.getId()
+AddExistingImageToAlbum->Home:status code != 200
+Home->Home:Error msg
+end
+AddExistingImageToAlbum->ImageDAO:new ImageDAO()
+AddExistingImageToAlbum->ImageDAO:findImageById(imageId)
+ImageDAO-->AddExistingImageToAlbum:image
+AddExistingImageToAlbum->ImageDAO:albumContainsImage(oldAlbumId, imageId)
+ImageDAO-->AddExistingImageToAlbum: contained
+AddExistingImageToAlbum->ImageDAO:getuserByImageId(imageId)
+ImageDAO-->AddExistingImageToAlbum: userId
+opt image==null || contained==false || userId!=user.getId()
+AddExistingImageToAlbum->Home:status code != 200
+Home->Home: error msg
+end
+AddExistingImageToAlbum->ImageDAO:addExistingImageToAlbum(newAlbumId, imageId)
+AddExistingImageToAlbum->Home:status code == 200
+Home->PageOrchestrator: showImageModalWindow(imageId, oldAlbumId)

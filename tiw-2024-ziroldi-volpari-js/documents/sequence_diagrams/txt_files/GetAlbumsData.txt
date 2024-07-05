@@ -1,0 +1,11 @@
+title GetAlbumsData
+
+[->Home:AlbumList.show()
+Home-> GetAlbumsData: AJAX GET
+GetAlbumsData->AlbumDAO:new AlbumDAO()
+GetAlbumsData->AlbumDAO:findAlbumsByUserSorted(user.getId())
+AlbumDAO-->GetAlbumsData:userAlbums
+GetAlbumsData->AlbumDAO:findAlbumOfOthersSorted(user.getId())
+AlbumDAO-->GetAlbumsData:otherAlbums
+GetAlbumsData->Home:status code == 200
+GetAlbumsData->Home:albumsJson

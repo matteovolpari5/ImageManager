@@ -1,0 +1,17 @@
+title AddNewImageToAlbum
+
+[->Home:submit add new image form
+Home->AddNewImageToAlbum:AJAX POST \nalbumid, title, description, image
+AddNewImageToAlbum->AlbumDAO:new AlbumDAO()
+AddNewImageToAlbum->AlbumDAO:findAlbumById(albumId)
+AlbumDAO-->AddNewImageToAlbum:album
+AddNewImageToAlbum->AlbumDAO: getUserByAlbumId(albumId)
+AlbumDAO-->AddNewImageToAlbum:userId
+opt [album==null || userId!=user.getId()]
+AddNewImageToAlbum->Home:status code != 200
+Home->Home:Error msg
+end
+AddNewImageToAlbum->ImageDAO:new ImageDAO()
+
+AddNewImageToAlbum->ImageDAO:addNewImageToAlbum(title, description, outpath, albumId)
+AddNewImageToAlbum->Home:status code == 200

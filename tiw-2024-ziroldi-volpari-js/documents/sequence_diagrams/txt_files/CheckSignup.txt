@@ -1,0 +1,23 @@
+title CheckSignup
+[->login.html/login.js: submit signup form
+login.html/login.js -> CheckSignup:AJAXPOST: \nusername, email, password, repeatPassword
+CheckSignup->UserDAO: new UserDAO()
+CheckSignup->UserDAO:getUserByEmail(email)
+UserDAO-->CheckSignup: user
+opt user != null
+CheckSignup->login.html/login.js: status code != 200
+login.html/login.js->login.html/login.js: Error msg
+end
+CheckSignup->UserDAO: getUserByUsername(username)
+UserDAO-->CheckSignup:user
+opt user != null
+CheckSignup->login.html/login.js: status code != 200
+login.html/login.js->login.html/login.js: Error msg
+end
+CheckSignup->UserDAO:registerUser(username, email, password)
+UserDAO-->CheckSignup:user
+opt user != null
+CheckSignup->login.html/login.js: status code == 200
+CheckSignup->Session: setAttribute ("user", user)
+login.html/login.js-> Window: location = "home.html"
+end
