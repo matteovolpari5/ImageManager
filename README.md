@@ -7,6 +7,11 @@ and comment photos.
 
 The full requirements can be found [here](https://github.com/kevinziroldi/image-manager-webapp/blob/main/requirements.pdf).
 
+## Tools 
+- [Eclipse](https://www.eclipse.org)
+- [Gson](https://github.com/google/gson)
+- [Apache Commons](https://commons.apache.org)
+
 ## Photos
 ### Login and signup
 <img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-pure-html/photos/login_pure_html.png">
