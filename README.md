@@ -11,12 +11,12 @@ A user can:
 - Add comments
 - See albums and photos of other users
 
-The full requirements can be found [here](https://github.com/kevinziroldi/image-manager-webapp/blob/main/requirements.pdf).
+The full requirements can be found [here](https://github.com/matteovolpari5/ImageManager/blob/main/requirements.pdf).
 
 ## Documentation 
 The project documentation and database dump can be found at the following links:
-- [Documentation pure HTML](https://github.com/kevinziroldi/image-manager-webapp/tree/main/tiw-2024-ziroldi-volpari-pure-html/documents)
-- [Documentation JS](https://github.com/kevinziroldi/image-manager-webapp/tree/main/tiw-2024-ziroldi-volpari-js/documents)
+- [Documentation pure HTML](https://github.com/matteovolpari5/ImageManager/tree/main/tiw-2024-ziroldi-volpari-pure-html/documents)
+- [Documentation JS](https://github.com/matteovolpari5/ImageManager/tree/main/tiw-2024-ziroldi-volpari-js/documents)
 
 ## Installation 
 In order to run the project, follow these steps:
@@ -41,14 +41,14 @@ For educational purposes, we avoided using any JS framework and opted for plain 
 
 ## Preview
 ### Login and signup
-<img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-pure-html/photos/login_pure_html.png">
+<img src="https://github.com/matteovolpari5/ImageManager/blob/main/tiw-2024-ziroldi-volpari-pure-html/photos/login_pure_html.png">
 
 ### Home page
-<img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-pure-html/photos/home_pure_html.png">
+<img src="https://github.com/matteovolpari5/ImageManager/blob/main/tiw-2024-ziroldi-volpari-pure-html/photos/home_pure_html.png">
 
 ### Album page
-<img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-js/photos/album_js.png">
+<img src="https://github.com/matteovolpari5/ImageManager/blob/main/tiw-2024-ziroldi-volpari-js/photos/album_js.png">
 
 ### Image page
-<img src="https://github.com/kevinziroldi/image-manager-webapp/blob/main/tiw-2024-ziroldi-volpari-js/photos/image_js.png">
+<img src="https://github.com/matteovolpari5/ImageManager/blob/main/tiw-2024-ziroldi-volpari-js/photos/image_js.png">
 
